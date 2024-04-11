@@ -16,10 +16,10 @@ function init() {
     d3.json(url).then((data) => {
         
         // Set a variable for the sample names
-        let names = data.names;
+        let samplenames = data.names;
 
         // Add  samples to dropdown menu
-        names.forEach((id) => {
+        samplenames.forEach((id) => {
 
             // print the value of the variables during the entire loop
             console.log(id);
@@ -30,43 +30,43 @@ function init() {
         });
 
         // Set the first sample from the list
-        let sample_one = names[0];
+        let sample_first = samplenames[0];
 
         // Print the value of sample_one
-        console.log(sample_one);
+        console.log(sample_first);
 
         // Build the initial plots
-        buildMetadata(sample_one);
-        buildBarChart(sample_one);
-        buildBubbleChart(sample_one);
-        buildGaugeChart(sample_one);
-        //buildPieChart(sample_one);
+        populateMetadata(sample_first);
+        populateBarChart(sample_first);
+        populateBubbleChart(sample_first);
+        //buildGaugeChart(sample_first);
+       
     });
 };
 
 // Function to populate metadata info
-function buildMetadata(sample) {
+function populateMetadata(sample) {
 
     // Use D3 to retrieve all data
     d3.json(url).then((data) => {
 
         // Retrieve all metadata
-        let metadata = data.metadata;
+        let Retrievemetadata = data.metadata;
 
         // Filter based on the value of the sample
-        let value = metadata.filter(result => result.id == sample);
+        let value = Retrievemetadata.filter(result => result.id == sample);
 
         // Print the array of metadata objects
         console.log(value)
 
         // Get the first index from the array
-        let valueData = value[0];
+        let valData = value[0];
 
         // Clear metadata content to make it ready for user input
         d3.select("#sample-metadata").html("");
 
         // Use Object.entries to add each key/value pair to the panel
-        Object.entries(valueData).forEach(([key,value]) => {
+        Object.entries(valData).forEach(([key,value]) => {
 
             // Print the individual key/value pairs as they are being appended to the metadata panel
             console.log(key,value);
@@ -78,27 +78,27 @@ function buildMetadata(sample) {
 };
 
 // Function to populate the bar chart
-function buildBarChart(sample) {
+function populateBarChart(sample) {
 
     // Use D3 to retrieve all of the data
     d3.json(url).then((data) => {
 
         // Retrieve all sample data
-        let sampleInfo = data.samples;
+        let RetrievesampleInfo = data.samples;
 
         //Find the selected sample
         //let selectedSample = sampleInfo.find(result => r //
 
         // Filter based on the value of the sample
-        let value = sampleInfo.filter(result => result.id == sample);
+        let value = RetrievesampleInfo.filter(result => result.id == sample);
 
         // Get the first index from the array
-        let valueData = value[0];
+        let valData = value[0];
 
         // Get the otu_ids, lables, and sample values
-        let otu_ids = valueData.otu_ids;
-        let otu_labels = valueData.otu_labels;
-        let sample_values = valueData.sample_values;
+        let otu_ids = valData.otu_ids;
+        let otu_labels = valData.otu_labels;
+        let sample_values = valData.sample_values;
 
         // Log the data to the console
         console.log(otu_ids,otu_labels,sample_values);
@@ -131,24 +131,24 @@ function buildBarChart(sample) {
 };
 
 // Function to populate the bubble chart
-function buildBubbleChart(sample) {
+function populateBubbleChart(sample) {
 
     // Use D3 to retrieve all of the data
     d3.json(url).then((data) => {
         
         // Retrieve all sample data
-        let sampleInfo = data.samples;
+        let RetrievesampleInfo = data.samples;
 
         // Filter based on the value of the sample
-        let value = sampleInfo.filter(result => result.id == sample);
+        let value = RetrievesampleInfo.filter(result => result.id == sample);
 
         // Get the first index from the array
-        let valueData = value[0];
+        let valData = value[0];
 
         // Get the otu_ids, lables, and sample values
-        let otu_ids = valueData.otu_ids;
-        let otu_labels = valueData.otu_labels;
-        let sample_values = valueData.sample_values;
+        let otu_ids = valData.otu_ids;
+        let otu_labels = valData.otu_labels;
+        let sample_values = valData.sample_values;
 
         // Log the data to the console
         console.log(otu_ids,otu_labels,sample_values);
@@ -184,12 +184,11 @@ function optionChanged(value) {
     console.log(value); 
 
     // Call all functions 
-    buildMetadata(value);
-    buildBarChart(value);
-    buildBubbleChart(value);
+    populateMetadata(value);
+    populateBarChart(value);
+    populateBubbleChart(value);
     //buildGaugeChart(value);
-    //buildPieChart(value);
-};
+    };
 
 // Initialize function
 init();
