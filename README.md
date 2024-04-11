@@ -28,3 +28,7 @@ The data for this project originates from an intriguing study conducted by Hulcr
 ## How to Use
 * Select a Test Subject ID No. from the dropdown menu to update the visualizations with data specific to that individual.
 * Hover over the charts to see additional details about the bacteria cultures and their frequencies. 
+
+## References
+
+Hulcr, J. et al. (2012) A Jungle in There: Bacteria in Belly Buttons are Highly Diverse, but Predictable. Retrieved from: http://robdunnlab.com/projects/belly-button-biodiversity/results-and-data/Links to an external site.
