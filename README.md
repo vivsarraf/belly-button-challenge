@@ -1,7 +1,8 @@
 # belly-button-challenge Module-14
 
 # Belly Button Biodiversity
-![dashboard_part1](https://github.com/vivsarraf/belly-button-challenge/assets/135401654/f1f5937b-b796-42f5-8ef0-cd1cc9fc0434)
+![hw02](https://github.com/vivsarraf/belly-button-challenge/assets/135401654/9d3a2d1b-929d-4b86-80fa-fe91df7e3aec)
+
 
 ## Project Overview
 This project embarks on an interactive exploration of microbial data from various individuals, leveraging the D3.js library to parse and visualize information from a comprehensive JSON dataset. At its core, the initiative aims to unveil the top Operational Taxonomic Units (OTUs) present in individuals, employing a variety of dynamic visualizations such as horizontal bar charts and bubble charts to represent the data's complexity and richness. Through an intuitive interface featuring dropdown menus and responsive charts, users can navigate through the dataset to uncover insights into the microbial communities within each sample. The visualization effort extends to displaying demographic metadata, enriching the context of each dataset explored. Designed with accessibility in mind, the project is hosted on GitHub Pages, inviting users to engage with the data meaningfully and interactively. This endeavor highlights the capabilities of web-based data visualization tools and underscores the potential for a deeper understanding of microbiological ecosystems through data analytics.
